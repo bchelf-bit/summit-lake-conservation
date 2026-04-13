@@ -1,0 +1,224 @@
+/* shared.css — Summit Lake Conservation Proposal */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital@0;1&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --stone: #2c2a25;
+  --bark: #4a3f35;
+  --moss: #5a6e4a;
+  --sage: #8a9e78;
+  --lichen: #b5c4a0;
+  --mist: #dce8d4;
+  --snow: #f4f1ec;
+  --glacier: #c8dde8;
+  --sky: #7aaec0;
+  --gold: #c8a84b;
+  --accent: #e8c97a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--stone);
+  color: var(--snow);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: rgba(44,42,37,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(181,196,160,0.15);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; letter-spacing: 0.08em;
+  color: var(--lichen); text-decoration: none;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  color: var(--lichen); text-decoration: none;
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  opacity: 0.65; transition: opacity 0.2s, color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--accent); }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  padding: 10rem 3rem 4rem;
+  border-bottom: 1px solid rgba(181,196,160,0.12);
+  position: relative;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--hero-tint, var(--moss));
+  opacity: 0.06;
+  pointer-events: none;
+}
+.page-eyebrow {
+  font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem;
+}
+.page-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1; max-width: 18ch;
+  animation: fadeUp 0.8s ease both;
+}
+.page-hero h1 em { font-style: italic; color: var(--lichen); }
+.page-hero .lead {
+  margin-top: 1.5rem; max-width: 54ch;
+  font-size: 1.05rem; line-height: 1.8;
+  color: rgba(244,241,236,0.72);
+  animation: fadeUp 0.8s ease 0.15s both;
+}
+
+/* ── CONTENT LAYOUT ── */
+.page-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 5rem 3rem 7rem;
+}
+
+/* ── TYPOGRAPHY ── */
+.page-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem; line-height: 1.2;
+  margin: 3.5rem 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(181,196,160,0.2);
+}
+.page-content h2:first-child { margin-top: 0; }
+.page-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; margin: 2rem 0 0.6rem;
+  color: var(--lichen);
+}
+.page-content p {
+  font-size: 1rem; line-height: 1.9;
+  color: rgba(244,241,236,0.78);
+  margin-bottom: 1.2rem;
+}
+.page-content ul, .page-content ol {
+  margin: 0 0 1.5rem 1.5rem;
+  color: rgba(244,241,236,0.75);
+}
+.page-content li {
+  font-size: 0.97rem; line-height: 1.8; margin-bottom: 0.4rem;
+}
+
+/* ── CALLOUT BOXES ── */
+.callout {
+  border-left: 3px solid var(--moss);
+  background: rgba(90,110,74,0.12);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 0 4px 4px 0;
+}
+.callout.gold { border-color: var(--gold); background: rgba(200,168,75,0.1); }
+.callout.sky  { border-color: var(--sky);  background: rgba(122,174,192,0.1); }
+.callout p { margin-bottom: 0; font-size: 0.97rem; }
+.callout-label {
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 0.5rem;
+}
+
+/* ── SPECIES CARDS ── */
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem; margin: 2rem 0;
+}
+.species-card {
+  background: rgba(181,196,160,0.07);
+  border: 1px solid rgba(181,196,160,0.14);
+  padding: 1.8rem;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+.species-card:hover { background: rgba(181,196,160,0.12); }
+.species-card .sci {
+  font-style: italic; font-size: 0.82rem;
+  color: var(--sage); margin-bottom: 0.25rem;
+}
+.species-card h4 {
+  font-family: 'Playfair Display', serif; font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+.species-card p { font-size: 0.88rem; line-height: 1.75; margin-bottom: 0; }
+.status-badge {
+  display: inline-block; margin-top: 0.8rem;
+  font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+}
+.status-badge.concern  { background: rgba(200,168,75,0.2);  color: var(--accent); }
+.status-badge.threat   { background: rgba(180,60,60,0.2);   color: #e89090; }
+.status-badge.stable   { background: rgba(90,110,74,0.25);  color: var(--lichen); }
+.status-badge.invasive { background: rgba(170,100,40,0.25); color: #e0a870; }
+
+/* ── PLAN STEPS ── */
+.plan-steps { margin: 2rem 0; }
+.plan-step {
+  display: grid; grid-template-columns: 3rem 1fr;
+  gap: 1.5rem; margin-bottom: 2.5rem; align-items: start;
+}
+.step-num {
+  font-family: 'Playfair Display', serif; font-size: 2rem;
+  color: rgba(181,196,160,0.25); line-height: 1; text-align: right;
+}
+.step-body h4 {
+  font-family: 'Playfair Display', serif; font-size: 1.15rem;
+  color: var(--lichen); margin-bottom: 0.4rem;
+}
+.step-body p { font-size: 0.93rem; line-height: 1.8; margin-bottom: 0; }
+
+/* ── PAGE NAV ── */
+.page-nav-strip {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 2rem 3rem;
+  border-top: 1px solid rgba(181,196,160,0.12);
+  flex-wrap: wrap; gap: 1rem;
+}
+.page-nav-link {
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--sage); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  transition: color 0.2s;
+}
+.page-nav-link:hover { color: var(--accent); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 3rem 3rem 2rem;
+  border-top: 1px solid rgba(181,196,160,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 1rem;
+}
+footer p { font-size: 0.78rem; color: rgba(181,196,160,0.4); letter-spacing: 0.05em; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a {
+  font-size: 0.75rem; color: rgba(181,196,160,0.4);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--lichen); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1rem; }
+  .page-hero { padding: 8rem 1.5rem 3rem; }
+  .page-content { padding: 3rem 1.5rem 5rem; }
+  .page-nav-strip { padding: 1.5rem; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+}
