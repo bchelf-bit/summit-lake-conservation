@@ -1,355 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Summit Lake Park — Conservation Proposal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css"/>
   <style>
-    :root {
-      --stone: #2c2a25;
-      --bark: #4a3f35;
-      --moss: #5a6e4a;
-      --sage: #8a9e78;
-      --lichen: #b5c4a0;
-      --mist: #dce8d4;
-      --snow: #f4f1ec;
-      --glacier: #c8dde8;
-      --sky: #7aaec0;
-      --gold: #c8a84b;
-      --accent: #e8c97a;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--stone);
-      color: var(--snow);
-      font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 3rem;
-      background: rgba(44,42,37,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(181,196,160,0.15);
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; letter-spacing: 0.08em;
-      color: var(--lichen); text-decoration: none;
-    }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--lichen); text-decoration: none;
-      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
-      opacity: 0.75; transition: opacity 0.2s, color 0.2s;
-    }
-    .nav-links a:hover { opacity: 1; color: var(--accent); }
-
-    /* ── HERO ── */
+    /* Index-only styles */
     .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 0 3rem 5rem;
-      position: relative;
-      background:
-        linear-gradient(to bottom, rgba(44,42,37,0.2) 0%, rgba(44,42,37,0.7) 70%, var(--stone) 100%),
-        url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Summit_Lake_Mt_Evans_Colorado.jpg/1280px-Summit_Lake_Mt_Evans_Colorado.jpg') center/cover no-repeat;
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 3rem 4rem;
+      border-bottom: 1px solid var(--rule);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: end;
     }
-
-    .hero-eyebrow {
-      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 1.2rem;
-      animation: fadeUp 1s ease 0.3s both;
+    .hero-label {
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-label::before {
+      content: '';
+      display: block; height: 1px; width: 2rem;
+      background: var(--accent);
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 7vw, 6.5rem);
-      line-height: 1.05; font-weight: 700;
-      max-width: 14ch;
-      animation: fadeUp 1s ease 0.5s both;
+      font-family: 'Spectral', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300; line-height: 1.08;
+      letter-spacing: -0.02em; color: var(--ink);
     }
-    .hero h1 em { font-style: italic; color: var(--lichen); }
-    .hero-sub {
-      margin-top: 1.5rem; max-width: 48ch;
-      font-size: 1.05rem; line-height: 1.7;
-      color: rgba(244,241,236,0.8);
-      animation: fadeUp 1s ease 0.7s both;
+    .hero h1 em { font-style: italic; }
+    .hero-right { padding-bottom: 0.5rem; }
+    .hero-desc {
+      font-size: 1rem; line-height: 1.85;
+      color: var(--ink-3); margin-bottom: 2rem;
+      border-left: 2px solid var(--rule);
+      padding-left: 1.2rem;
     }
     .hero-cta {
-      margin-top: 2.5rem;
-      display: inline-flex; align-items: center; gap: 0.75rem;
-      padding: 0.9rem 2rem;
-      background: var(--moss); color: var(--snow);
-      text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.15);
-      transition: background 0.25s, transform 0.25s;
-      animation: fadeUp 1s ease 0.9s both;
+      display: inline-block;
+      padding: 0.7rem 1.6rem;
+      background: var(--accent); color: #fff;
+      text-decoration: none;
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: background 0.2s;
     }
-    .hero-cta:hover { background: var(--sage); transform: translateY(-2px); }
-    .hero-cta svg { width: 16px; height: 16px; }
+    .hero-cta:hover { background: var(--accent-2); }
 
-    /* ── ALTITUDE STRIP ── */
-    .stats-strip {
+    /* Stats row */
+    .stats-row {
+      max-width: 1100px; margin: 0 auto;
       display: grid; grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid rgba(181,196,160,0.2);
-      border-bottom: 1px solid rgba(181,196,160,0.2);
+      border-bottom: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
     }
-    .stat-item {
-      padding: 2rem 2.5rem;
-      border-right: 1px solid rgba(181,196,160,0.15);
+    .stat {
+      padding: 1.8rem 2rem;
+      border-right: 1px solid var(--rule);
     }
-    .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Playfair Display', serif; font-size: 2.4rem;
-      color: var(--accent); line-height: 1;
+    .stat:last-child { border-right: none; }
+    .stat-val {
+      font-family: 'Spectral', serif;
+      font-size: 2rem; font-weight: 300; font-style: italic;
+      color: var(--ink); line-height: 1;
     }
     .stat-label {
-      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--sage); margin-top: 0.4rem;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--ink-4); margin-top: 0.3rem;
     }
 
-    /* ── INTRO ── */
+    /* Intro block */
     .intro {
+      max-width: 1100px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; padding: 7rem 3rem;
-      max-width: 1200px; margin: 0 auto;
+      gap: 0;
+      border-bottom: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
     }
+    .intro-text { padding: 3.5rem; border-right: 1px solid var(--rule); }
     .intro-text h2 {
-      font-family: 'Playfair Display', serif; font-size: 2.4rem;
-      line-height: 1.2; margin-bottom: 1.5rem;
+      font-family: 'Spectral', serif; font-size: 1.5rem; font-weight: 600;
+      margin-bottom: 1.2rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
     }
-    .intro-text h2 em { font-style: italic; color: var(--sage); }
-    .intro-text p {
-      font-size: 1rem; line-height: 1.85; color: rgba(244,241,236,0.75);
-      margin-bottom: 1.2rem;
-    }
+    .intro-text p { font-size: 0.97rem; line-height: 1.85; color: var(--ink-2); margin-bottom: 1rem; }
     .intro-quote {
-      border-left: 3px solid var(--moss);
-      padding: 2rem;
-      background: rgba(90,110,74,0.1);
-      align-self: center;
+      padding: 3.5rem;
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--paper-2);
     }
     .intro-quote blockquote {
-      font-family: 'Playfair Display', serif; font-style: italic;
-      font-size: 1.5rem; line-height: 1.5; color: var(--lichen);
+      font-family: 'Spectral', serif; font-style: italic;
+      font-size: 1.25rem; line-height: 1.6; color: var(--ink-2);
+      margin-bottom: 1.2rem;
+    }
+    .intro-quote blockquote::before {
+      content: '\201C';
+      font-size: 3rem; line-height: 0; vertical-align: -0.6rem;
+      color: var(--rule); margin-right: 0.2rem;
     }
     .intro-quote cite {
-      display: block; margin-top: 1rem;
-      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--sage); font-style: normal;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-4); font-style: normal;
     }
 
-    /* ── PAGE CARDS ── */
-    .section-label {
-      text-align: center; padding: 0 3rem 1.5rem;
-      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--sage);
+    /* Section nav cards */
+    .section-heading {
+      max-width: 1100px; margin: 0 auto;
+      padding: 2rem 3rem 0.5rem;
+      border-left: 1px solid var(--rule);
+      border-right: 1px solid var(--rule);
+    }
+    .section-heading span {
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-4);
     }
     .cards-grid {
+      max-width: 1100px; margin: 0 auto;
       display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1.5px;
-      background: rgba(181,196,160,0.1);
-      margin: 0 0 1.5px;
+      gap: 1px; background: var(--rule);
+      border: 1px solid var(--rule);
     }
     .card {
-      position: relative; overflow: hidden;
-      background: var(--stone);
-      padding: 3.5rem 3rem;
-      text-decoration: none; color: var(--snow);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      min-height: 360px;
-      transition: background 0.3s;
+      background: var(--paper);
+      padding: 2.5rem 2.8rem;
+      text-decoration: none; color: var(--ink);
+      display: flex; flex-direction: column;
+      transition: background 0.15s;
     }
-    .card::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--card-color, var(--moss));
-      opacity: 0.12;
-      transition: opacity 0.3s;
-    }
-    .card:hover::before { opacity: 0.22; }
-    .card:hover .card-arrow { transform: translate(4px, -4px); }
-
-    .card-num {
-      position: absolute; top: 2rem; right: 2.5rem;
-      font-family: 'Playfair Display', serif; font-size: 5rem;
-      color: rgba(181,196,160,0.08); font-weight: 700; line-height: 1;
-      pointer-events: none;
-    }
-    .card-tag {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--sage); margin-bottom: 0.8rem;
-    }
-    .card h3 {
-      font-family: 'Playfair Display', serif; font-size: 1.9rem;
-      line-height: 1.15; margin-bottom: 0.8rem;
-    }
-    .card p {
-      font-size: 0.9rem; line-height: 1.7;
-      color: rgba(244,241,236,0.65); max-width: 38ch;
-      margin-bottom: 1.5rem;
-    }
-    .card-arrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--accent);
-      transition: transform 0.25s;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 3rem 3rem 2rem;
-      border-top: 1px solid rgba(181,196,160,0.15);
+    .card:hover { background: var(--accent-bg); }
+    .card-meta {
       display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
+      margin-bottom: 1.2rem;
     }
-    footer p {
-      font-size: 0.78rem; color: rgba(181,196,160,0.5);
-      letter-spacing: 0.05em;
+    .card-num {
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.65rem; letter-spacing: 0.15em; color: var(--ink-4);
     }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a {
-      font-size: 0.75rem; color: rgba(181,196,160,0.5);
-      text-decoration: none; letter-spacing: 0.08em;
-      transition: color 0.2s;
+    .card-arrow { font-size: 0.9rem; color: var(--ink-4); transition: transform 0.2s, color 0.2s; }
+    .card:hover .card-arrow { transform: translateX(4px); color: var(--accent); }
+    .card h3 {
+      font-family: 'Spectral', serif; font-size: 1.35rem; font-weight: 600;
+      margin-bottom: 0.7rem; color: var(--ink);
     }
-    .footer-links a:hover { color: var(--lichen); }
+    .card p { font-size: 0.88rem; line-height: 1.75; color: var(--ink-3); }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1rem; }
-      .hero { padding: 0 1.5rem 4rem; }
-      .stats-strip { grid-template-columns: repeat(2, 1fr); }
-      .intro { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+      .stats-row { grid-template-columns: repeat(2,1fr); }
+      .intro { grid-template-columns: 1fr; }
+      .intro-text { border-right: none; border-bottom: 1px solid var(--rule); padding: 2rem 1.5rem; }
+      .intro-quote { padding: 2rem 1.5rem; }
+      .section-heading { padding: 1.5rem 1.5rem 0.5rem; }
       .cards-grid { grid-template-columns: 1fr; }
-      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Summit Lake Park</a>
-    <ul class="nav-links">
-      <li><a href="importance.html">Importance</a></li>
-      <li><a href="species.html">Species</a></li>
-      <li><a href="context.html">Context</a></li>
-      <li><a href="plan.html">Plan</a></li>
-      <li><a href="sources.html">Sources</a></li>
-    </ul>
-  </nav>
+<div class="top-rule"></div>
 
-  <section class="hero">
-    <div class="hero-eyebrow">Conservation Proposal · Summit County, Colorado</div>
+<nav>
+  <a href="index.html" class="nav-logo">Summit Lake Park</a>
+  <ul class="nav-links">
+    <li><a href="importance.html">Importance</a></li>
+    <li><a href="species.html">Species</a></li>
+    <li><a href="context.html">Context</a></li>
+    <li><a href="plan.html">Plan</a></li>
+    <li><a href="sources.html">Sources</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-label">Conservation Proposal · Idaho Springs, Colorado</div>
     <h1>Protecting <em>Summit Lake</em> Park</h1>
-    <p class="hero-sub">
-      A comprehensive proposal for the ecological preservation of one of Colorado's most vulnerable alpine ecosystems, perched at 12,830 feet on the shoulder of Mount Evans.
+  </div>
+  <div class="hero-right">
+    <p class="hero-desc">
+      A comprehensive proposal for the ecological preservation of one of Colorado's most
+      significant alpine tundra ecosystems — the highest city park in the United States,
+      a National Natural Landmark, and an irreplaceable window into arctic ecology
+      south of the Arctic Circle.
     </p>
-    <a href="plan.html" class="hero-cta">
-      View Our Proposal
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
-  </section>
-
-  <div class="stats-strip">
-    <div class="stat-item">
-      <div class="stat-num">12,830<span style="font-size:1.2rem">ft</span></div>
-      <div class="stat-label">Elevation</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">~160</div>
-      <div class="stat-label">Acres Protected</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label">Threatened Species</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">60<span style="font-size:1.2rem">day</span></div>
-      <div class="stat-label">Growing Season</div>
-    </div>
+    <a href="plan.html" class="hero-cta">Read the Proposal →</a>
   </div>
+</section>
 
-  <section class="intro" id="about">
-    <div class="intro-text">
-      <h2>A Fragile World <em>Above the Trees</em></h2>
-      <p>
-        Summit Lake Park sits in the alpine tundra zone of the Mount Evans Wilderness, one of the most ecologically sensitive landscapes in North America. Above treeline, plants and animals have adapted over millennia to extreme cold, intense UV radiation, and a brutally short growing season.
-      </p>
-      <p>
-        Today, this ecosystem faces compounding threats: rising temperatures driven by climate change, increasing recreational pressure from nearby Denver, invasive species encroachment, and degradation of water quality in the lake itself.
-      </p>
-      <p>
-        This proposal outlines a science-based, community-supported conservation plan to ensure that Summit Lake Park remains a thriving alpine ecosystem for generations to come.
-      </p>
-    </div>
-    <div class="intro-quote">
-      <blockquote>
-        "The alpine tundra is not a wasteland — it is a living mosaic of extraordinary resilience, and it demands our most careful stewardship."
-      </blockquote>
-      <cite>— Colorado State University Alpine Research Station</cite>
-    </div>
-  </section>
-
-  <div class="section-label">Explore the Proposal</div>
-
-  <div class="cards-grid">
-    <a href="importance.html" class="card" style="--card-color: var(--sky);">
-      <span class="card-num">01</span>
-      <div class="card-tag">Section One</div>
-      <h3>Why This Place Matters</h3>
-      <p>Explore the ecological, hydrological, and cultural significance of Summit Lake Park within the broader Colorado landscape.</p>
-      <span class="card-arrow">Read More →</span>
-    </a>
-    <a href="species.html" class="card" style="--card-color: var(--moss);">
-      <span class="card-num">02</span>
-      <div class="card-tag">Section Two</div>
-      <h3>Characteristic Species</h3>
-      <p>A field guide to the key flora and fauna that define this alpine ecosystem — and the pressures each currently faces.</p>
-      <span class="card-arrow">Read More →</span>
-    </a>
-    <a href="context.html" class="card" style="--card-color: var(--gold);">
-      <span class="card-num">03</span>
-      <div class="card-tag">Section Three</div>
-      <h3>Conservation Context</h3>
-      <p>Understanding existing protections, jurisdictional frameworks, and the gaps our proposal is designed to fill.</p>
-      <span class="card-arrow">Read More →</span>
-    </a>
-    <a href="plan.html" class="card" style="--card-color: var(--sage);">
-      <span class="card-num">04</span>
-      <div class="card-tag">Section Four</div>
-      <h3>Proposed Conservation Plan</h3>
-      <p>Our evidence-based, actionable recommendations for habitat protection, visitor management, monitoring, and restoration.</p>
-      <span class="card-arrow">Read More →</span>
-    </a>
+<div class="stats-row">
+  <div class="stat">
+    <div class="stat-val">12,830<span style="font-size:1rem">ft</span></div>
+    <div class="stat-label">Elevation</div>
   </div>
+  <div class="stat">
+    <div class="stat-val">1965</div>
+    <div class="stat-label">National Natural Landmark</div>
+  </div>
+  <div class="stat">
+    <div class="stat-val">~60</div>
+    <div class="stat-label">Day Growing Season</div>
+  </div>
+  <div class="stat">
+    <div class="stat-val">#1</div>
+    <div class="stat-label">Highest U.S. City Park</div>
+  </div>
+</div>
 
-  <footer>
-    <p>Summit Lake Park Conservation Proposal · School Project · 2026</p>
-    <div class="footer-links">
-      <a href="importance.html">Importance</a>
-      <a href="species.html">Species</a>
-      <a href="context.html">Context</a>
-      <a href="plan.html">Plan</a>
+<div class="intro">
+  <div class="intro-text">
+    <h2>A Fragile World Above the Trees</h2>
+    <p>
+      Summit Lake Park sits on the north face of Mount Blue Sky in a zone of alpine tundra
+      that has more in common with northern Alaska than the surrounding Rockies. It is a
+      disjunct ecosystem — a pocket of arctic habitat isolated thousands of miles from the
+      Arctic Circle — and many of its species exist nowhere else on Earth.
+    </p>
+    <p>
+      Today, this ecosystem faces compounding threats: rising temperatures driven by climate
+      change, increasing recreational pressure from the Denver metro area, invasive species
+      encroachment, and degradation of the Bear Creek watershed that originates here.
+    </p>
+    <p>
+      This proposal outlines a science-based, community-supported conservation plan to ensure
+      that Summit Lake Park remains a thriving alpine ecosystem for generations to come.
+    </p>
+  </div>
+  <div class="intro-quote">
+    <blockquote>
+      The species found here are more typical of northern Alaska than the rest of the Rockies,
+      and many are endemic to this one location. This isolation makes this spectacular ecosystem
+      very fragile.
+    </blockquote>
+    <cite>— Summit Lake Park Conservation Proposal, 2026</cite>
+  </div>
+</div>
+
+<div class="section-heading"><span>Proposal Sections</span></div>
+
+<div class="cards-grid">
+  <a href="importance.html" class="card">
+    <div class="card-meta">
+      <span class="card-num">Section 01</span>
+      <span class="card-arrow">→</span>
     </div>
-  </footer>
+    <h3>Why This Place Matters</h3>
+    <p>The ecological, hydrological, educational, and cultural significance of Summit Lake Park — and why its loss would be irreversible.</p>
+  </a>
+  <a href="species.html" class="card">
+    <div class="card-meta">
+      <span class="card-num">Section 02</span>
+      <span class="card-arrow">→</span>
+    </div>
+    <h3>Characteristic Species</h3>
+    <p>The key flora and fauna that define this disjunct arctic ecosystem — their adaptations, their ecological roles, and the threats each faces.</p>
+  </a>
+  <a href="context.html" class="card">
+    <div class="card-meta">
+      <span class="card-num">Section 03</span>
+      <span class="card-arrow">→</span>
+    </div>
+    <h3>Conservation Context</h3>
+    <p>Existing protections, jurisdictional frameworks, known threats, and the critical gaps that this proposal is designed to fill.</p>
+  </a>
+  <a href="plan.html" class="card">
+    <div class="card-meta">
+      <span class="card-num">Section 04</span>
+      <span class="card-arrow">→</span>
+    </div>
+    <h3>Proposed Conservation Plan</h3>
+    <p>Evidence-based, actionable recommendations for habitat protection, visitor management, long-term monitoring, and ecological restoration.</p>
+  </a>
+</div>
+
+<div class="page-nav-strip" style="border-top: none; padding-top: 1.5rem;">
+  &nbsp;
+  <a href="sources.html" class="page-nav-link">View Sources →</a>
+</div>
+
+<footer>
+  <p>Summit Lake Park Conservation Proposal · School Project · 2026</p>
+  <div class="footer-links">
+    <a href="importance.html">Importance</a>
+    <a href="species.html">Species</a>
+    <a href="context.html">Context</a>
+    <a href="plan.html">Plan</a>
+    <a href="sources.html">Sources</a>
+  </div>
+</footer>
 
 </body>
 </html>

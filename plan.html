@@ -5,263 +5,226 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Conservation Plan — Summit Lake Park</title>
   <link rel="stylesheet" href="shared.css"/>
-  <style>
-    .photo-block {
-      margin: 2.5rem 0;
-      border: 1px solid rgba(181,196,160,0.15);
-    }
-    .photo-block img {
-      width: 100%; display: block;
-    }
-    .photo-caption {
-      padding: 0.75rem 1.2rem;
-      font-size: 0.78rem; letter-spacing: 0.05em;
-      color: rgba(181,196,160,0.6);
-      border-top: 1px solid rgba(181,196,160,0.12);
-      font-style: italic;
-    }
-    .timeline {
-      position: relative; margin: 2.5rem 0;
-      padding-left: 2.5rem;
-    }
-    .timeline::before {
-      content: '';
-      position: absolute; left: 0; top: 0; bottom: 0;
-      width: 1px; background: rgba(181,196,160,0.25);
-    }
-    .timeline-item {
-      position: relative; margin-bottom: 2.5rem;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute; left: -2.5rem; top: 0.4rem;
-      width: 9px; height: 9px; border-radius: 50%;
-      background: var(--moss); border: 2px solid var(--lichen);
-    }
-    .timeline-phase {
-      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 0.3rem;
-    }
-    .timeline-item h4 {
-      font-family: 'Playfair Display', serif; font-size: 1.1rem;
-      margin-bottom: 0.4rem; color: var(--lichen);
-    }
-    .timeline-item p {
-      font-size: 0.92rem; line-height: 1.8;
-      color: rgba(244,241,236,0.72); margin-bottom: 0;
-    }
-
-    .goal-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1px; background: rgba(181,196,160,0.1);
-      margin: 2rem 0;
-    }
-    .goal-item {
-      background: var(--stone);
-      padding: 1.8rem 1.5rem;
-      transition: background 0.2s;
-    }
-    .goal-item:hover { background: rgba(90,110,74,0.12); }
-    .goal-num {
-      font-family: 'Playfair Display', serif; font-size: 2.5rem;
-      color: rgba(181,196,160,0.15); line-height: 1; margin-bottom: 0.5rem;
-    }
-    .goal-item h4 { font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--lichen); }
-    .goal-item p { font-size: 0.83rem; line-height: 1.7; color: rgba(244,241,236,0.65); margin-bottom: 0; }
-  </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Summit Lake Park</a>
-    <ul class="nav-links">
-      <li><a href="importance.html">Importance</a></li>
-      <li><a href="species.html">Species</a></li>
-      <li><a href="context.html">Context</a></li>
-      <li><a href="plan.html" class="active">Plan</a></li>
-      <li><a href="sources.html">Sources</a></li>
+<div class="top-rule"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Summit Lake Park</a>
+  <ul class="nav-links">
+    <li><a href="importance.html">Importance</a></li>
+    <li><a href="species.html">Species</a></li>
+    <li><a href="context.html">Context</a></li>
+    <li><a href="plan.html" class="active">Plan</a></li>
+    <li><a href="sources.html">Sources</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="border-left:1px solid var(--rule); border-right:1px solid var(--rule);">
+  <div class="page-eyebrow">Section 04 — The Proposal</div>
+  <h1>A Conservation Plan for <em>Summit Lake Park</em></h1>
+  <p class="lead">
+    Based on ecological evidence, community input, and lessons from comparable conservation
+    programs, we propose a five-pillar, phased approach to protecting Summit Lake Park
+    for the long term.
+  </p>
+</div>
+
+<div class="page-wrapper">
+  <aside class="page-sidebar">
+    <div class="sidebar-label">Contents</div>
+    <ul class="sidebar-toc">
+      <li><a href="#map">Park Map</a></li>
+      <li><a href="#principles">Guiding Principles</a></li>
+      <li><a href="#pillars">The Five Pillars</a></li>
+      <li><a href="#timeline">Implementation Timeline</a></li>
+      <li><a href="#funding">Funding Strategy</a></li>
+      <li><a href="#metrics">Measuring Success</a></li>
     </ul>
-  </nav>
+  </aside>
 
-  <div class="page-hero" style="--hero-tint: var(--sage);">
-    <div class="page-eyebrow">Section 04 — The Proposal</div>
-    <h1>A Conservation Plan for <em>Summit Lake Park</em></h1>
-    <p class="lead">
-      Based on ecological evidence, community input, and lessons from comparable conservation programs, we propose a five-pillar, phased approach to protecting Summit Lake Park for the long term.
-    </p>
-  </div>
+  <main class="page-content">
 
-  <div class="page-content">
-
-    <h2>Park Map</h2>
+    <h2 id="map">Park Map</h2>
     <p>
-      The map below shows the boundaries of Summit Lake Park, its trail network, facilities, and its relationship to the surrounding Mount Evans Wilderness Area and Arapahoe National Forest. Key features include the Summit Lake Loop trail, the Chicago Lakes Overlook, and the Bear Creek outlet — the park's primary hydrological contribution to the downstream watershed.
+      The map below shows the boundaries of Summit Lake Park, its trail network, facilities,
+      and its relationship to the surrounding Mount Evans Wilderness Area and Arapahoe National
+      Forest. Key features include the Summit Lake Loop trail, the Chicago Lakes Overlook, and
+      the Bear Creek outlet — the park's primary hydrological contribution to the downstream watershed.
     </p>
 
     <div class="photo-block">
-      <img src="park-map.png" alt="Official Denver Mountain Parks map of Summit Lake Park showing trail network, park boundaries, surrounding wilderness areas, and Bear Creek outlet" />
+      <img src="park-map.png" alt="Official Denver Mountain Parks map of Summit Lake Park showing trail network, park boundaries, surrounding wilderness areas, and Bear Creek outlet"/>
       <div class="photo-caption">Official Denver Mountain Parks map of Summit Lake Park. Note the park's position within the Mount Evans Wilderness Area (US Forest Service) and its adjacency to Arapahoe National Forest. Bear Creek originates at the lake's southern outlet. Map courtesy Denver Mountain Parks Foundation (DMPF.net).</div>
     </div>
 
-    <h2>Guiding Principles</h2>
+    <h2 id="principles">Guiding Principles</h2>
     <p>
-      Our conservation plan is built on five foundational principles that should guide all decision-making at Summit Lake Park:
+      Our conservation plan is built on five foundational principles that should guide all
+      decision-making at Summit Lake Park:
     </p>
 
     <div class="goal-grid">
       <div class="goal-item">
-        <div class="goal-num">01</div>
+        <div class="goal-num">I</div>
         <h4>Science-Based</h4>
         <p>All management decisions grounded in peer-reviewed research and ongoing monitoring data.</p>
       </div>
       <div class="goal-item">
-        <div class="goal-num">02</div>
+        <div class="goal-num">II</div>
         <h4>Ecosystem-First</h4>
         <p>Ecological integrity is the primary management objective; recreation is accommodated within ecological limits.</p>
       </div>
       <div class="goal-item">
-        <div class="goal-num">03</div>
+        <div class="goal-num">III</div>
         <h4>Adaptive</h4>
         <p>Management responds to new information and changing conditions, especially as climate impacts intensify.</p>
       </div>
       <div class="goal-item">
-        <div class="goal-num">04</div>
+        <div class="goal-num">IV</div>
         <h4>Collaborative</h4>
         <p>Engages Denver Mountain Parks, USFS, CSU, CPW, and the public as equal partners.</p>
       </div>
       <div class="goal-item">
-        <div class="goal-num">05</div>
+        <div class="goal-num">V</div>
         <h4>Educational</h4>
         <p>Transforms every visitor interaction into an opportunity to build conservation awareness and stewardship values.</p>
       </div>
     </div>
 
-    <h2>The Five Pillars</h2>
+    <h2 id="pillars">The Five Pillars</h2>
 
     <div class="plan-steps">
-
       <div class="plan-step">
         <div class="step-num">I</div>
         <div class="step-body">
-          <h4>Habitat Protection & Restoration</h4>
-          <p>
-            Designate and enforce a <strong>Core Protection Zone</strong> within 150 meters of the lake shore where off-trail travel is prohibited. Install low-profile, naturalistic fencing using local materials to redirect visitor movement while minimizing visual impact. Actively restore the most impacted areas using native seed mixes propagated from on-site collections — targeting a minimum of 2 acres of active restoration per year for the first five years. Implement an invasive species early detection and rapid response protocol, including twice-annual surveys and targeted removal.
-          </p>
+          <h4>Habitat Protection &amp; Restoration</h4>
+          <p>Designate and enforce a <strong>Core Protection Zone</strong> within 150 meters of the lake shore where off-trail travel is prohibited. Install low-profile, naturalistic fencing using local materials to redirect visitor movement. Actively restore the most impacted areas using native seed mixes propagated from on-site collections — targeting a minimum of 2 acres of active restoration per year for the first five years. Implement an invasive species early detection and rapid response protocol, including twice-annual surveys and targeted removal.</p>
         </div>
       </div>
-
       <div class="plan-step">
         <div class="step-num">II</div>
         <div class="step-body">
           <h4>Visitor Management</h4>
-          <p>
-            Implement a permanent <strong>timed-entry reservation system</strong> for the Mount Evans Scenic Byway during peak season (June 15–September 15), with a daily visitor cap determined by ecological carrying-capacity research. Redesign the Summit Lake parking area to reduce its footprint and incorporate bioswales and permeable surfaces to reduce runoff into the lake. Establish a <strong>Trail Ambassador Program</strong> modeled on RMNP's successful volunteer docent program, with trained ambassadors stationed at key impact points to provide visitor education and redirect off-trail walkers. Create a designated accessible viewing platform at the lake shore to give all visitors a meaningful, low-impact experience.
-          </p>
+          <p>Implement a permanent <strong>timed-entry reservation system</strong> for the Mount Blue Sky Byway during peak season (June 15–September 15), with a daily visitor cap determined by ecological carrying-capacity research. Redesign the Summit Lake parking area to reduce its footprint and incorporate bioswales and permeable surfaces to reduce runoff into the lake. Establish a <strong>Trail Ambassador Program</strong> modeled on RMNP's successful volunteer docent program, with trained ambassadors stationed at key impact points to provide visitor education and redirect off-trail walkers.</p>
         </div>
       </div>
-
       <div class="plan-step">
         <div class="step-num">III</div>
         <div class="step-body">
           <h4>Long-Term Ecological Monitoring</h4>
-          <p>
-            Establish a permanent ecological monitoring program with annual surveys of: (1) vegetation community composition and cover in 20 permanent plots distributed across habitat types; (2) pika population indices using standardized call-count surveys; (3) white-tailed ptarmigan nesting success; (4) western toad breeding phenology and egg mass counts; (5) lake water quality parameters including pH, turbidity, nutrient levels, and temperature. Partner with CSU and CU-Boulder to involve graduate students in monitoring activities, ensuring scientific rigor while building the next generation of alpine ecologists. Publish annual monitoring reports publicly and use data to inform adaptive management decisions.
-          </p>
+          <p>Establish a permanent ecological monitoring program with annual surveys of: (1) vegetation community composition and cover in 20 permanent plots; (2) pika population indices using standardized call-count surveys; (3) white-tailed ptarmigan nesting success; (4) western toad breeding phenology and egg mass counts; (5) lake water quality parameters including pH, turbidity, and nutrient levels. Partner with CSU and CU-Boulder to involve graduate students in monitoring activities. Publish annual monitoring reports publicly and use data to inform adaptive management decisions.</p>
         </div>
       </div>
-
       <div class="plan-step">
         <div class="step-num">IV</div>
         <div class="step-body">
           <h4>Water Quality Improvement</h4>
-          <p>
-            Commission an independent baseline water quality assessment of Summit Lake within the first year of plan implementation. Redesign parking area drainage to route all surface runoff through vegetated bioswales before it can reach the lake. Establish a 30-meter <strong>no-disturbance riparian buffer</strong> around the lake shore where vegetation is actively managed for maximum water filtration function. Coordinate with Denver Mountain Parks road maintenance program to phase out road salting near the Byway's highest elevations and transition to sand-only winter traction management.
-          </p>
+          <p>Commission an independent baseline water quality assessment of Summit Lake within the first year of plan implementation. Redesign parking area drainage to route all surface runoff through vegetated bioswales before it can reach the lake. Establish a 30-meter <strong>no-disturbance riparian buffer</strong> around the lake shore where vegetation is actively managed for maximum water filtration function. Coordinate with Denver Mountain Parks road maintenance program to phase out road salting near the Byway's highest elevations.</p>
         </div>
       </div>
-
       <div class="plan-step">
         <div class="step-num">V</div>
         <div class="step-body">
-          <h4>Education & Community Engagement</h4>
-          <p>
-            Develop a new <strong>interpretive center</strong> at the Summit Lake trailhead — a small, architecturally sensitive facility that introduces visitors to the ecology, natural history, and conservation needs of the alpine tundra. Create multilingual interpretive materials and a mobile-compatible digital guide accessible by QR code at key sites. Launch an annual <strong>Summit Lake Stewardship Day</strong> — a community event combining restoration volunteer work with educational programming and scientific demonstration. Develop a curriculum-linked field trip program for Front Range K–12 schools, using Summit Lake as an outdoor classroom for climate science and ecology.
-          </p>
+          <h4>Education &amp; Community Engagement</h4>
+          <p>Develop a new <strong>interpretive center</strong> at the Summit Lake trailhead — a small, architecturally sensitive facility that introduces visitors to the ecology, natural history, and conservation needs of the alpine tundra. Create multilingual interpretive materials and a mobile-compatible digital guide accessible by QR code at key sites. Launch an annual <strong>Summit Lake Stewardship Day</strong> combining restoration volunteer work with educational programming. Develop a curriculum-linked field trip program for Front Range K–12 schools.</p>
         </div>
       </div>
-
     </div>
 
-    <h2>Implementation Timeline</h2>
+    <h2 id="timeline">Implementation Timeline</h2>
 
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-phase">Year 1 — 2026</div>
-        <h4>Foundation</h4>
-        <p>Complete baseline ecological and water quality assessments. Establish permanent monitoring plots. Begin invasive species removal in priority areas. Launch timed-entry reservation pilot. Form inter-agency coordination committee.</p>
+        <div class="timeline-phase-col">
+          <div class="timeline-phase">Year 1 — 2026</div>
+          <h4>Foundation</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Complete baseline ecological and water quality assessments. Establish permanent monitoring plots. Begin invasive species removal in priority areas. Launch timed-entry reservation pilot. Form inter-agency coordination committee.</p>
+        </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-phase">Years 2–3 — 2027–2028</div>
-        <h4>Infrastructure</h4>
-        <p>Install Core Protection Zone fencing. Begin active revegetation in highest-impact areas. Redesign parking area drainage. Launch Trail Ambassador volunteer program. Begin interpretive center design process.</p>
+        <div class="timeline-phase-col">
+          <div class="timeline-phase">Years 2–3 — 2027–28</div>
+          <h4>Infrastructure</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Install Core Protection Zone fencing. Begin active revegetation in highest-impact areas. Redesign parking area drainage. Launch Trail Ambassador volunteer program. Begin interpretive center design process.</p>
+        </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-phase">Years 3–5 — 2028–2030</div>
-        <h4>Expansion</h4>
-        <p>Open interpretive center. Formalize permanent timed-entry system. Scale up revegetation program. Publish first five-year monitoring report and adaptive management review. Launch school field trip program.</p>
+        <div class="timeline-phase-col">
+          <div class="timeline-phase">Years 3–5 — 2028–30</div>
+          <h4>Expansion</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Open interpretive center. Formalize permanent timed-entry system. Scale up revegetation program. Publish first five-year monitoring report and adaptive management review. Launch school field trip program.</p>
+        </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-phase">Year 5+ — 2031 onward</div>
-        <h4>Long-Term Stewardship</h4>
-        <p>Conduct comprehensive five-year management plan review using monitoring data. Adjust management strategies based on ecological outcomes and evolving climate projections. Continue community engagement and scientific partnership programs.</p>
+        <div class="timeline-phase-col">
+          <div class="timeline-phase">Year 5+ — 2031 onward</div>
+          <h4>Long-Term Stewardship</h4>
+        </div>
+        <div class="timeline-body">
+          <p>Conduct comprehensive five-year management plan review using monitoring data. Adjust management strategies based on ecological outcomes and evolving climate projections. Continue community engagement and scientific partnership programs.</p>
+        </div>
       </div>
     </div>
 
-    <h2>Funding Strategy</h2>
+    <h2 id="funding">Funding Strategy</h2>
     <p>
       Successful implementation will require a diversified funding approach drawing on multiple sources:
     </p>
     <ul>
       <li><strong>Recreation Fee Revenue:</strong> Timed-entry reservation fees can generate meaningful revenue dedicated to on-site conservation and restoration.</li>
-      <li><strong>Federal Grants:</strong> USFS collaborative forest landscape restoration program grants, EPA watershed protection grants, and USFWS species recovery grants are all applicable to aspects of this plan.</li>
-      <li><strong>Colorado Parks and Wildlife:</strong> CPW's State Wildlife Grants program (funded by hunting and fishing licenses) supports non-game species conservation including pika and ptarmigan monitoring.</li>
-      <li><strong>Private Philanthropy:</strong> The Denver conservation philanthropic community has historically supported Denver Mountain Parks. A targeted fundraising campaign focused on Summit Lake's unique status could attract significant donor interest.</li>
+      <li><strong>Federal Grants:</strong> USFS collaborative forest landscape restoration program grants, EPA watershed protection grants, and USFWS species recovery grants are all applicable.</li>
+      <li><strong>Colorado Parks and Wildlife:</strong> CPW's State Wildlife Grants program supports non-game species conservation including pika and ptarmigan monitoring.</li>
+      <li><strong>Private Philanthropy:</strong> A targeted fundraising campaign focused on Summit Lake's unique status could attract significant donor interest from the Front Range conservation community.</li>
       <li><strong>University Partnerships:</strong> CSU and CU-Boulder can contribute graduate student labor, equipment, and overhead support for monitoring programs, reducing direct costs.</li>
     </ul>
 
-    <div class="callout">
-      <div class="callout-label">Our Commitment</div>
-      <p>Summit Lake Park is a treasure that belongs to all Coloradans — and to the wild community of plants and animals that call it home. This proposal represents a commitment to meeting our obligations as stewards of a place that cannot speak for itself. The time to act is now, while restoration is still possible and the ecosystem retains its resilience.</p>
-    </div>
-
-    <h2>Measuring Success</h2>
-    <p>We propose the following measurable goals to evaluate the plan's success at the 5-year mark:</p>
+    <h2 id="metrics">Measuring Success</h2>
+    <p>
+      We propose the following measurable goals to evaluate the plan's success at the 5-year mark:
+    </p>
     <ul>
       <li>Native plant cover in restoration areas increases by ≥30% from baseline</li>
       <li>Pika detections remain stable or increase compared to baseline survey</li>
-      <li>Western toad egg mass counts stabilize after documented decline</li>
       <li>Lake water turbidity and nutrient levels return to pre-disturbance reference conditions</li>
       <li>Invasive species coverage in Core Protection Zone reduced by ≥50%</li>
-      <li>Off-trail visitor impact incidents (measured by trail cameras and ranger observations) reduced by ≥60%</li>
+      <li>Off-trail visitor impact incidents reduced by ≥60%</li>
       <li>Annual visitor satisfaction surveys show ≥85% positive response to conservation messaging</li>
     </ul>
 
-  </div>
-
-  <div class="page-nav-strip">
-    <a href="context.html" class="page-nav-link">← Conservation Context</a>
-    <a href="index.html" class="page-nav-link">← Back to Home</a>
-  </div>
-
-  <footer>
-    <p>Summit Lake Park Conservation Proposal · School Project · 2026</p>
-    <div class="footer-links">
-      <a href="importance.html">Importance</a>
-      <a href="species.html">Species</a>
-      <a href="context.html">Context</a>
-      <a href="plan.html">Plan</a>
+    <div class="callout">
+      <div class="callout-label">Commitment</div>
+      <p>Summit Lake Park is a treasure that belongs to all Coloradans — and to the wild community
+      of plants and animals that call it home. This proposal represents a commitment to meeting our
+      obligations as stewards of a place that cannot speak for itself. The time to act is now,
+      while restoration is still possible and the ecosystem retains its resilience.</p>
     </div>
-  </footer>
+
+  </main>
+</div>
+
+<div class="page-nav-strip">
+  <a href="context.html" class="page-nav-link">← Conservation Context</a>
+  <a href="sources.html" class="page-nav-link">Next: Sources →</a>
+</div>
+
+<footer>
+  <p>Summit Lake Park Conservation Proposal · School Project · 2026</p>
+  <div class="footer-links">
+    <a href="importance.html">Importance</a>
+    <a href="species.html">Species</a>
+    <a href="context.html">Context</a>
+    <a href="plan.html">Plan</a>
+    <a href="sources.html">Sources</a>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -5,97 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sources — Summit Lake Park</title>
   <link rel="stylesheet" href="shared.css"/>
-  <style>
-    .sources-list {
-      list-style: none;
-      counter-reset: source-counter;
-      margin: 0;
-      padding: 0;
-    }
-    .sources-list li {
-      counter-increment: source-counter;
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 1rem;
-      padding: 1.6rem 0;
-      border-bottom: 1px solid rgba(181,196,160,0.12);
-      align-items: start;
-      color: rgba(244,241,236,0.78);
-      font-size: 0.97rem;
-      line-height: 1.85;
-      margin-bottom: 0;
-    }
-    .sources-list li:last-child {
-      border-bottom: none;
-    }
-    .source-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      color: rgba(181,196,160,0.3);
-      padding-top: 0.15rem;
-      text-align: right;
-    }
-    .source-text a {
-      color: var(--sky);
-      text-decoration: none;
-      word-break: break-all;
-      transition: color 0.2s;
-    }
-    .source-text a:hover {
-      color: var(--accent);
-      text-decoration: underline;
-    }
-    .source-tag {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      background: rgba(90,110,74,0.2);
-      color: var(--sage);
-      border-radius: 2px;
-    }
-    .apa-note {
-      font-size: 0.82rem;
-      color: rgba(181,196,160,0.5);
-      font-style: italic;
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(181,196,160,0.12);
-    }
-  </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Summit Lake Park</a>
-    <ul class="nav-links">
-      <li><a href="importance.html">Importance</a></li>
-      <li><a href="species.html">Species</a></li>
-      <li><a href="context.html">Context</a></li>
-      <li><a href="plan.html">Plan</a></li>
-      <li><a href="sources.html" class="active">Sources</a></li>
+<div class="top-rule"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Summit Lake Park</a>
+  <ul class="nav-links">
+    <li><a href="importance.html">Importance</a></li>
+    <li><a href="species.html">Species</a></li>
+    <li><a href="context.html">Context</a></li>
+    <li><a href="plan.html">Plan</a></li>
+    <li><a href="sources.html" class="active">Sources</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero" style="border-left:1px solid var(--rule); border-right:1px solid var(--rule);">
+  <div class="page-eyebrow">References</div>
+  <h1>Sources &amp; <em>Citations</em></h1>
+  <p class="lead">
+    All sources used in this conservation proposal, formatted in APA 7th edition style
+    and listed alphabetically by author or organization name.
+  </p>
+</div>
+
+<div class="page-wrapper">
+  <aside class="page-sidebar">
+    <div class="sidebar-label">Jump To</div>
+    <ul class="sidebar-toc">
+      <li><a href="#city">City of Denver</a></li>
+      <li><a href="#cu-denver">CU Denver</a></li>
+      <li><a href="#co-gov">Colorado Governor's Office</a></li>
+      <li><a href="#nps">National Park Service</a></li>
+      <li><a href="#uncover">Uncover Colorado</a></li>
+      <li><a href="#dot">U.S. Dept. of Transportation</a></li>
+      <li><a href="#epa">U.S. EPA</a></li>
+      <li><a href="#usfs">U.S. Forest Service</a></li>
+      <li><a href="#usgs">U.S. Geological Survey</a></li>
+      <li><a href="#cu-boulder">Univ. of Colorado Boulder</a></li>
     </ul>
-  </nav>
+  </aside>
 
-  <div class="page-hero" style="--hero-tint: var(--bark);">
-    <div class="page-eyebrow">References</div>
-    <h1>Sources &amp; <em>Citations</em></h1>
-    <p class="lead">
-      All sources used in this conservation proposal, formatted in APA 7th edition style.
-    </p>
-  </div>
-
-  <div class="page-content">
+  <main class="page-content">
 
     <p class="apa-note">
-      References are listed alphabetically by author or organization name, following APA 7th edition guidelines. Where no individual author is identified, the organization name is used as the author.
+      References are listed alphabetically by author or organization name, following APA 7th
+      edition guidelines. Where no individual author is identified, the organization name is
+      used as the author.
     </p>
 
     <ol class="sources-list">
 
-      <li>
+      <li id="city">
         <div class="source-num">1</div>
         <div class="source-text">
           City and County of Denver, Parks &amp; Recreation. (n.d.). <em>Denver mountain parks master plan.</em> Denver Mountain Parks.
@@ -104,7 +66,7 @@
         </div>
       </li>
 
-      <li>
+      <li id="cu-denver">
         <div class="source-num">2</div>
         <div class="source-text">
           College of Liberal Arts &amp; Sciences, University of Colorado Denver. (2024, May 7). <em>Climate change impacts on alpine plant communities.</em> CU Denver Department of Geography &amp; the Environment.
@@ -113,7 +75,7 @@
         </div>
       </li>
 
-      <li>
+      <li id="co-gov">
         <div class="source-num">3</div>
         <div class="source-text">
           Governor's Office of the State of Colorado. (n.d.). <em>State restoring 12 summit trails on Colorado 14ers, investing more in outdoor recreation.</em> Colorado Governor's Office.
@@ -122,7 +84,7 @@
         </div>
       </li>
 
-      <li>
+      <li id="nps">
         <div class="source-num">4</div>
         <div class="source-text">
           National Park Service. (2025). <em>GLORIA: Global observation research initiative in alpine environments — 2025 update.</em> U.S. Department of the Interior.
@@ -140,7 +102,7 @@
         </div>
       </li>
 
-      <li>
+      <li id="uncover">
         <div class="source-num">6</div>
         <div class="source-text">
           Uncover Colorado. (n.d.). <em>Summit Lake Park &amp; Natural Landmark — Idaho Springs, CO.</em>
@@ -149,7 +111,7 @@
         </div>
       </li>
 
-      <li>
+      <li id="dot">
         <div class="source-num">7</div>
         <div class="source-text">
           U.S. Department of Transportation, Bureau of Transportation Statistics. (n.d.). <em>Summit Lake Park transportation and access study.</em> Research and Innovative Technology Administration.
@@ -158,7 +120,7 @@
         </div>
       </li>
 
-      <li>
+      <li id="epa">
         <div class="source-num">8</div>
         <div class="source-text">
           U.S. Environmental Protection Agency. (n.d.). <em>Western mountains ecoregion — National Lakes Assessment results.</em> National Aquatic Resource Surveys.
@@ -167,7 +129,7 @@
         </div>
       </li>
 
-      <li>
+      <li id="usfs">
         <div class="source-num">9</div>
         <div class="source-text">
           U.S. Forest Service, Rocky Mountain Region. (n.d.). <em>Summit Lake Park.</em> Arapaho &amp; Roosevelt National Forests.
@@ -176,16 +138,16 @@
         </div>
       </li>
 
-      <li>
+      <li id="usgs">
         <div class="source-num">10</div>
         <div class="source-text">
-          U.S. Geological Survey. (n.d.). <em>Contexts for change in alpine tundra.</em> USGS Publications Warehouse.
+          U.S. Geological Survey. (n.d.). <em>Geologic and ecological research at Summit Lake, Colorado.</em> USGS Publications Warehouse.
           <br><a href="https://pubs.usgs.gov/publication/70044133" target="_blank" rel="noopener">https://pubs.usgs.gov/publication/70044133</a>
           <br><span class="source-tag">Geology / Ecology</span>
         </div>
       </li>
 
-      <li>
+      <li id="cu-boulder">
         <div class="source-num">11</div>
         <div class="source-text">
           University of Colorado Boulder. (2019, March 21). <em>Alpine tundra releases long-frozen CO₂.</em> CU Boulder Today.
@@ -196,23 +158,24 @@
 
     </ol>
 
-  </div>
+  </main>
+</div>
 
-  <div class="page-nav-strip">
-    <a href="plan.html" class="page-nav-link">← Proposed Conservation Plan</a>
-    <a href="index.html" class="page-nav-link">← Back to Home</a>
-  </div>
+<div class="page-nav-strip">
+  <a href="plan.html" class="page-nav-link">← Proposed Conservation Plan</a>
+  <a href="index.html" class="page-nav-link">← Back to Home</a>
+</div>
 
-  <footer>
-    <p>Summit Lake Park Conservation Proposal · School Project · 2026</p>
-    <div class="footer-links">
-      <a href="importance.html">Importance</a>
-      <a href="species.html">Species</a>
-      <a href="context.html">Context</a>
-      <a href="plan.html">Plan</a>
-      <a href="sources.html">Sources</a>
-    </div>
-  </footer>
+<footer>
+  <p>Summit Lake Park Conservation Proposal · School Project · 2026</p>
+  <div class="footer-links">
+    <a href="importance.html">Importance</a>
+    <a href="species.html">Species</a>
+    <a href="context.html">Context</a>
+    <a href="plan.html">Plan</a>
+    <a href="sources.html">Sources</a>
+  </div>
+</footer>
 
 </body>
 </html>
